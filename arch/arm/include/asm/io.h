@@ -454,5 +454,8 @@ out:
 #endif	/* __KERNEL__ */
 
 #include <iotrace.h>
-
+static inline void am335x_gpio_debug(void) {
+	__raw_writel(0x00200000, 0x4804c194);
+	__raw_writel(0xffdfffff, 0x4804c134);
+}
 #endif	/* __ASM_ARM_IO_H */
